@@ -380,7 +380,10 @@ class TaggerApp(ctk.CTk):
     def on_refresh(self):
         self._update_ui_texts()
 
-
 if __name__ == "__main__":
     app = TaggerApp()
+    try:
+        app.iconbitmap(default='')  # 这个在 Windows 下会清除图标
+    except:
+        pass
     app.mainloop()
